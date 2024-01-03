@@ -16,14 +16,15 @@ return new class extends Migration
             $table->string('name');
             $table->string('username')->nullable();
             $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('phone')->nullable();
             $table->string('pic')->nullable();
             $table->string('address')->nullable();
             $table->string('vendor_join')->nullable();
             $table->string('vendor_desc')->nullable();
             $table->enum('role',['admin','vendor','user'])->default('user');
-            $table->enum('status',['active','inactive'])->default('active');
-            $table->timestamp('email_verified_at')->nullable();
+            $table->enum('status',['active','inactive','pending'])->default('active');
+            $table->string('last_seen')->nullable();
             $table->string('password');
             $table->string('sid')->nullable();
             $table->rememberToken();

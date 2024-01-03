@@ -30,6 +30,7 @@ class User extends Authenticatable
         'role',
         'status',
         'sid',
+        'last_seen',
      ];
 
     /**
