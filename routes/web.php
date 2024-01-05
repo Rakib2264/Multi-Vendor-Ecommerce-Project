@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
- 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -35,6 +35,11 @@ Route::get("admin/login",[AdminController::class,"login"]);
 // for admin after login
 Route::middleware(['auth', 'role:admin'])->group(function(){
     Route::get("/admin/dashboard",[AdminController::class,'index'])->name("admin.dashboard");
+    Route::get("/admin/profile",[AdminController::class,'profile'])->name("admin.profile");
+    Route::post("/admin/profileupdate",[AdminController::class,'profileupdate'])->name("admin.profileupdate");
+    Route::get("/admin/passwordchange",[AdminController::class,'passwordchange'])->name("admin.passwordchange");
+    Route::post("/admin/updatepassword",[AdminController::class,'updatepassword'])->name("admin.updatepassword");
+
 
 });
 
