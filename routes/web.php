@@ -48,6 +48,10 @@ Route::get("vendor/login",[VendorController::class,"login"]);
 // for vendor after login
 Route::middleware(['auth', 'role:vendor'])->group(function(){
     Route::get("/vendor/dashboard",[VendorController::class,'index'])->name("vendor.dashboard");
+    Route::get("/vendor/profile",[VendorController::class,'profile'])->name("vendor.profile");
+    Route::post("/vendor/profileupdate",[VendorController::class,'profileupdate'])->name("vendor.profileupdate");
+    Route::get("/vendor/passwordchange",[VendorController::class,'passwordchange'])->name("vendor.passwordchange");
+    Route::post("/vendor/updatepassword",[VendorController::class,'updatepassword'])->name("vendor.updatepassword");
 
 });
 require __DIR__.'/auth.php';

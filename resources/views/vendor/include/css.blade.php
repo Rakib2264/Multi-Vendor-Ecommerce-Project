@@ -22,5 +22,5 @@
 	<link rel="stylesheet" href="{{asset('backend')}}/assets/css/dark-theme.css" />
 	<link rel="stylesheet" href="{{asset('backend')}}/assets/css/semi-dark.css" />
 	<link rel="stylesheet" href="{{asset('backend')}}/assets/css/header-colors.css" />
-	<title>Admin - @yield('page_title')</title>
+	<title>Vendor - @yield('page_title')</title>
 </head>
