@@ -80,7 +80,7 @@
                     </div>
                     <div class="header-action-right">
                         <div class="header-action-2">
-                            <div class="search-location">
+                            {{-- <div class="search-location">
                                 <form action="#">
                                     <select class="select-active">
                                         <option>Your Location</option>
@@ -99,7 +99,7 @@
                                         <option>New York</option>
                                     </select>
                                 </form>
-                            </div>
+                            </div> --}}
 
                             <div class="header-action-icon-2">
                                 <a href="shop-wishlist.html">
@@ -152,6 +152,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="header-action-icon-2">
+                                <a href="shop-wishlist.html">
+                                    <img class="svgInject" alt="Nest" src="{{asset('frontend')}}/assets/imgs/theme/icons/log.png" />
+                                    <span class="pro-count blue">6</span>
+                                </a>
+                                <a href="{{route('login')}}"><span class="lable">Login /</span></a>
+                                <a href="{{route('register')}}"><span class="lable">Register</span></a>
+                            </div>
+
                             <div class="header-action-icon-2">
                                 <a href="page-account.html">
                                     <img class="svgInject" alt="Nest" src="{{asset('frontend')}}/assets/imgs/theme/icons/icon-user.svg" />
@@ -429,7 +438,7 @@
 
                 <div class="hotline d-none d-lg-flex">
                     <img src="{{asset('frontend')}}/assets/imgs/theme/icons/icon-headphone.svg" alt="hotline" />
-                    <p>1900 - 888<span>24/7 Support Center</span></p>
+                    <p>01729 - 542809<span>24/7 Support Center</span></p>
                 </div>
                 <div class="header-action-icon-2 d-block d-lg-none">
                     <div class="burger-icon burger-icon-white">

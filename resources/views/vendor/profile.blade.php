@@ -25,11 +25,11 @@
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
                                 @if (!$profile->pic)
-                                <img src="{{asset('backend')}}/assets/images/avatars/avatar-2.png" alt="vendor" class="rounded-circle p-1 bg-primary" width="110">
+                                <img src="{{asset('backend')}}/assets/images/avatars/av.jpg" alt="vendor" class="rounded-circle p-1 bg-primary" width="110">
 
                                 @else
 
-                                <img src="{{asset('backend')}}/assets/images/avatars/avatar-1.png" alt="vendor" class="rounded-circle p-1 bg-primary" width="110">
+                                <img src="{{asset('backend')}}/assets/images/avatars/av.jpg" alt="vendor" class="rounded-circle p-1 bg-primary" width="110">
                                 @endif
                                 <div class="mt-3">
                                     <h4>{{$profile->username}}</h4>
