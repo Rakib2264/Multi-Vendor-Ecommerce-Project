@@ -51,6 +51,16 @@
 									</div>
 									<div class="form-body">
 
+                                        @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+
 										<form class="row g-3" action="{{route('login')}}" method="post">
                                             @csrf
 											<div class="col-12">
@@ -63,8 +73,24 @@
 													<input type="password" name="password" class="form-control border-end-0" id="inputChoosePassword" value="12345678" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
 												</div>
 											</div>
+                                            <div class="row">
+                                                <div class="col-6 col-md-6 ">
+                                                    <label for="inputEmailAddress" class="form-label">Enter Security Code</label>
+                                                    <input type="text" name="security" class="form-control" id="inputEmailAddress" placeholder="Security code *">
+                                                </div>
 
-											<div class="col-md-12 text-end">	<a href="authentication-forgot-password.html">Forgot Password ?</a>
+                                                <div class="col-6 col-md-6">
+                                                    @php
+                                                    $code = rand('10101','100')
+                                                    @endphp
+
+                                                    <label for="inputEmailAddress" class="form-label">Security Code Here</label>
+                                                    <input type="text" name="randomcode" class="form-control" value="{{$code}}" readonly id="inputEmailAddress" placeholder="Security code *">
+                                                </div>
+                                            </div>
+
+
+											<div class="col-md-12 text-end"> <a href="authentication-forgot-password.html">Forgot Password ?</a>
 											</div>
 											<div class="col-12">
 												<div class="d-grid">

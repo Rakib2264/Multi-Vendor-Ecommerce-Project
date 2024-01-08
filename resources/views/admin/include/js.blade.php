@@ -39,3 +39,4 @@
   <script src="{{asset('backend')}}/assets/js/index.js"></script>
 <!--app JS-->
 <script src="{{asset('backend')}}/assets/js/app.js"></script>
+<script src="assets/plugins/datatable/js/jquery.dataTables.min.js"></script>

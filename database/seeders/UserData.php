@@ -25,7 +25,7 @@ class UserData extends Seeder
             ],
             [
                 "name" => "admin Khan",
-                'username' => 'diner',
+                'username' => 'admin',
                 'email' => "admin@gmail.com",
                 "role" => "admin", // Choose 'admin', 'vendor', or 'user'
                 "status" => "active",

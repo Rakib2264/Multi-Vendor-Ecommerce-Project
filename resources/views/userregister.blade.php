@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div>
-        <div class="page-content pt-150 pb-150">
+        <div class="page-content pt-90 pb-90">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-8 col-lg-10 col-md-12 m-auto">
@@ -31,34 +31,31 @@
                                         <div class="heading_s1">
                                             <h1 class="mb-5">Create an Account</h1>
                                             <p class="mb-30">Already have an account? <a
-                                                    href="{{route('login')}}">Login</a></p>
+                                                    href="{{ route('login') }}">Login</a></p>
                                         </div>
                                         @if ($errors->any())
-                                        <div class="alert alert-danger">
-                                            <ul>
-                                                @foreach ($errors->all() as $error)
-                                                    <li>{{ $error }}</li>
-                                                @endforeach
-                                            </ul>
-                                        </div>
-                                    @endif
-                                        <form method="post" action="{{route('register')}}">
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
+                                        <form method="post" action="{{ route('register') }}">
                                             @csrf
                                             <div class="form-group">
-                                                <input type="text" name="name"
-                                                    placeholder="Name">
+                                                <input type="text" name="name" placeholder="Name">
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <input type="text" name="username"
-                                                            placeholder="Username">
+                                                        <input type="text" name="username" placeholder="Username">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <input type="tel" name="phone"
-                                                            placeholder="Phone">
+                                                        <input type="tel" name="phone" placeholder="Phone">
                                                     </div>
                                                 </div>
                                             </div>
@@ -66,11 +63,10 @@
                                                 <input type="text" name="email" placeholder="Email">
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" name="password"
-                                                    placeholder="Password">
+                                                <input type="password" name="password" placeholder="Password">
                                             </div>
                                             <div class="form-group">
-                                                <input  type="password" name="password_confirmation"
+                                                <input type="password" name="password_confirmation"
                                                     placeholder="Confirm password">
                                             </div>
                                             <div class="login_footer form-group">
@@ -80,9 +76,10 @@
                                                 </div>
                                                 <span>
                                                     @php
-                                                    $code = rand('10101','100')
+                                                        $code = rand('19171', '100');
                                                     @endphp
-                                                    <input type="text" class="text-sale" name="randomcoderegister" value="{{$code}}" readonly>
+                                                    <input type="text" class="text-sale" name="randomcoderegister"
+                                                        value="{{ $code }}" readonly>
                                                 </span>
                                             </div>
 

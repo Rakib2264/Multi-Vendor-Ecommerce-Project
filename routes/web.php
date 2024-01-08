@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Vendor\VendorController;
 use Illuminate\Support\Facades\Route;
@@ -39,8 +40,6 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
     Route::post("/admin/profileupdate",[AdminController::class,'profileupdate'])->name("admin.profileupdate");
     Route::get("/admin/passwordchange",[AdminController::class,'passwordchange'])->name("admin.passwordchange");
     Route::post("/admin/updatepassword",[AdminController::class,'updatepassword'])->name("admin.updatepassword");
-
-
 });
 
 // for vendor before login
@@ -52,6 +51,22 @@ Route::middleware(['auth', 'role:vendor'])->group(function(){
     Route::post("/vendor/profileupdate",[VendorController::class,'profileupdate'])->name("vendor.profileupdate");
     Route::get("/vendor/passwordchange",[VendorController::class,'passwordchange'])->name("vendor.passwordchange");
     Route::post("/vendor/updatepassword",[VendorController::class,'updatepassword'])->name("vendor.updatepassword");
-
 });
+
+// for backend operation
+Route::middleware(['auth','role:admin'])->group(function(){
+    Route::group(['prefix'=>'/category'],function(){
+
+        Route::get('/add',[CategoryController::class,'index'])->name('add.category');
+        Route::post('/store',[CategoryController::class,'store'])->name('store.category');
+        Route::get('/show',[CategoryController::class,'show'])->name('show.category');
+
+    });
+});
+
+
+
+
+
+
 require __DIR__.'/auth.php';
