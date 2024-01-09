@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Vendor\VendorController;
@@ -69,6 +71,22 @@ Route::middleware(['auth','role:admin'])->group(function(){
         Route::get('/add',[SubCategoryController::class,'index'])->name('add.subcategory');
         Route::post('/store',[SubCategoryController::class,'store'])->name('store.subcategory');
         Route::get('/show',[SubCategoryController::class,'show'])->name('show.subcategory');
+
+    });
+
+    Route::group(['prefix'=>'/brand'],function(){
+
+        Route::get('/add',[BrandController::class,'index'])->name('add.brand');
+        Route::post('/store',[BrandController::class,'store'])->name('store.brand');
+        Route::get('/show',[BrandController::class,'show'])->name('show.brand');
+
+    });
+
+    Route::group(['prefix'=>'/product'],function(){
+
+        Route::get('/add',[ProductController::class,'index'])->name('add.product');
+        Route::post('/store',[ProductController::class,'store'])->name('store.product');
+        Route::get('/show',[ProductController::class,'show'])->name('show.product');
 
     });
 });

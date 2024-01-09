@@ -10,6 +10,7 @@
 	<link href="{{asset('backend')}}/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
 	<link href="{{asset('backend')}}/assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
 	<!-- loader-->
+    <link href="{{asset('backend')}}/assets/plugins/input-tags/css/tagsinput.css" rel="stylesheet" />
 	<link href="{{asset('backend')}}/assets/css/pace.min.css" rel="stylesheet" />
 	<script src="{{asset('backend')}}/assets/js/pace.min.js"></script>
 	<!-- Bootstrap CSS -->
@@ -23,4 +24,5 @@
 	<link rel="stylesheet" href="{{asset('backend')}}/assets/css/semi-dark.css" />
 	<link rel="stylesheet" href="{{asset('backend')}}/assets/css/header-colors.css" />
 	<title>Admin - @yield('page_title')</title>
+
 </head>
