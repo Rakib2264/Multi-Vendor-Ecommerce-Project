@@ -59,24 +59,18 @@
                                         value="red,green,blue">
                                 </div>
                             </div>
-
                             <div class="mb-3">
                                 <label for="inputProductImages" class="form-label">Product Image</label>
                                 <input onchange="previewImg(this)" type="file" name="image" class="form-control" id="inputProductImages" >
                                 <img class="mt-2" src="{{asset('uploads/download.png')}}" height="100px" width="100px" id="imagePreview" alt="">
                             </div>
-
                             <div class="mb-3">
                                 <label for="inputProductImages" class="form-label">Product Gallery</label>
                                 <input class="form-control" name="images[]" type="file" id="fileInput" multiple onchange="previewImages(this)">
                                 <div id="imagePreviews">
                                     <img class="mt-2" src="{{asset('uploads/download.png')}}" height="100px" width="100px" >
-
                                 </div>
-
-
                             </div>
-
                         </div>
                     </div>
                     <div class="col-lg-4">

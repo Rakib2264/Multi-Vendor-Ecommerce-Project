@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
 <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-    <div class="breadcrumb-title pe-3">Category</div>
+    <div class="breadcrumb-title pe-3">Product</div>
     <div class="ps-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0 p-0">
@@ -24,7 +24,10 @@
                           <tr>
                               <th scope="col">ID</th>
                               <th scope="col">Category Name</th>
-                              <th scope="col">Category Slug</th>
+                              <th scope="col">Sub Category</th>
+                              <th scope="col">Brand</th>
+                              <th scope="col">Product Name</th>
+                              <th scope="col">Qty</th>
                               <th scope="col">Image</th>
                               <th scope="col">Action</th>
                           </tr>
@@ -33,17 +36,21 @@
                         @php
                              $sl = 1;
                         @endphp
-                        @foreach ($categories as $category)
+                        @foreach ($products as $product)
                         <tr>
                             <td scope="col">{{$sl++}}</td>
-                            <td scope="col">{{$category->cat_name}}</td>
-                            <td scope="col">{{$category->cat_slug}}</td>
+                            <td scope="col">{{$product->cat->cat_name}}</td>
+                            <td scope="col">{{$product->subcat->subcat_name}}</td>
+                            <td scope="col">{{$product->brand->brand_name}}</td>
+                            <td scope="col">{{$product->product_name}}</td>
+                            <td scope="col">{{$product->quantity}}</td>
                             <td scope="col">
-                            <img src="{{asset('uploads/category/'.$category->cat_image)}}" alt="">
+                            <img src="{{asset('uploads/product/'.$product->image)}}" height="100px" width="100px" alt="">
                             </td>
                             <td scope="col">
-                                <button class="btn btn-info btn-sm" type="submit">Edit</button>
-                                <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                                <a class="btn btn-success"><i class="fa-solid fa-pen-to-square fa-fade"></i></a>
+                                <a class="btn btn-info"><i class="fa-solid fa-eye fa-fade"></i></a>
+                                <a class="btn btn-danger"><i class="fa-solid fa-trash-can fa-fade"></i></a>
                             </td>
                         </tr>
 

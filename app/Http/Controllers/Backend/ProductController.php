@@ -76,5 +76,11 @@ class ProductController extends Controller
 
     }
 
+    function show(){
+        // $products = Product::latest()->take(2)->get();
+        $products = Product::latest()->get();
+        return view("admin.pages.product.manage",compact("products"));
+    }
+
 
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SubCategoryController;
+use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Vendor\VendorController;
 use Illuminate\Support\Facades\Route;
@@ -20,9 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // userinteface
-Route::get('/', function () {
-    return view('dashboard');
-});
+Route::get("/",[FrontendController::class,"index"]);
 
 Route::get('/dashboard', function () {
     return view('userdashboard');
@@ -61,6 +60,9 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::group(['prefix'=>'/category'],function(){
 
         Route::get('/add',[CategoryController::class,'index'])->name('add.category');
+        Route::get('/edit/{id}',[CategoryController::class,'edit'])->name('edit.category');
+        Route::get('/delete/{id}',[CategoryController::class,'delete'])->name('delete.category');
+        Route::post('/update/{id}',[CategoryController::class,'update'])->name('update.category');
         Route::post('/store',[CategoryController::class,'store'])->name('store.category');
         Route::get('/show',[CategoryController::class,'show'])->name('show.category');
 
