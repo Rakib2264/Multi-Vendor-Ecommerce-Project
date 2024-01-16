@@ -10,18 +10,18 @@
         </div>
         <div class="carausel-10-columns-cover position-relative">
             <div class="carausel-10-columns" id="carausel-10-columns">
-
-                @foreach ($featuredCategories as $featuredCategorie)
+                @isset($allcategory)
+                @foreach ($allcategory as $allcategory)
                 <div class="card-2 bg-9 wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
                     <figure class="img-hover-scale overflow-hidden">
-                        <a href="shop-grid-right.html"><img
-                                src="{{ asset('uploads/category/'.$featuredCategorie->cat_image) }}" alt="" /></a>
+                        <a href="#"><img
+                                src="{{ asset('uploads/category/'.$allcategory->cat_image) }}" alt="" /></a>
                     </figure>
-                    <h6><a href="shop-grid-right.html">{{$featuredCategorie->cat_name}}</a></h6>
+                    <h6><a href="shop-grid-right.html">{{$allcategory->cat_name}}</a></h6>
                     {{-- <span>26 items</span> --}}
                 </div>
                 @endforeach
-
+                @endisset
 
 
             </div>

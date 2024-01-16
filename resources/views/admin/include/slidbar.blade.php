@@ -103,6 +103,27 @@
                 </li>
             </ul>
         </li>
+
+        <li>
+            <a href="#" class="has-arrow">
+                <div class="parent-icon">
+                    <i class="bx bx-category"></i>
+                </div>
+                <div class="menu-title">Seo Settings</div>
+            </a>
+            <ul>
+                <li>
+                    <a href="{{route('add.seo')}}">
+                        <i class="bx bx-right-arrow-alt"></i>Add
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('show.seo')}}">
+                        <i class="bx bx-right-arrow-alt"></i>Manage
+                    </a>
+                </li>
+            </ul>
+        </li>
     </ul>
     <!-- end navigation -->
 </div>

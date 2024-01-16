@@ -4,7 +4,9 @@
 <body>
     <!-- Modal -->
     <!-- Quick view -->
+  
     @include('include.quickview')
+
     <!-- Header  -->
     @include('include.header')
     <!-- End Header  -->

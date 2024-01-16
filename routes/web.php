@@ -4,7 +4,9 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\SeoSettingController;
 use App\Http\Controllers\Backend\SubCategoryController;
+use App\Http\Controllers\Frontend\AddtoCartController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Vendor\VendorController;
@@ -21,11 +23,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // userinteface
-Route::get("/",[FrontendController::class,"index"]);
+Route::get("/",[FrontendController::class,"index"])->name('index');
+Route::get("/product_details/{id}",[FrontendController::class,"product_details"])->name('product_details');
 
 Route::get('/dashboard', function () {
     return view('userdashboard');
 })->middleware(['auth'])->name('dashboard');
+
+
+Route::middleware('auth')->group(function(){
+    Route::get('/addtocart/{id}',[AddtoCartController::class,'addtocart']);
+    Route::get('/addtocartdelete/{id}',[AddtoCartController::class,'addtocartdelete']);
+    Route::get('/addtocartshow',[AddtoCartController::class,'addtocartshow']);
+    Route::get('/viewcart',[AddtoCartController::class,'viewcart'])->name('viewcart');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -89,6 +100,15 @@ Route::middleware(['auth','role:admin'])->group(function(){
         Route::get('/add',[ProductController::class,'index'])->name('add.product');
         Route::post('/store',[ProductController::class,'store'])->name('store.product');
         Route::get('/show',[ProductController::class,'show'])->name('show.product');
+
+    });
+
+
+    Route::group(['prefix'=>'/seo'],function(){
+
+        Route::get('/add',[SeoSettingController::class,'index'])->name('add.seo');
+        Route::post('/store',[SeoSettingController::class,'store'])->name('store.seo');
+        Route::get('/show',[SeoSettingController::class,'show'])->name('show.seo');
 
     });
 });

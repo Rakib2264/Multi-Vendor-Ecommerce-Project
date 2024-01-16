@@ -28,7 +28,7 @@
                                 <div class="product-cart-wrap">
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
-                                            <a href="shop-product-right.html">
+                                            <a href="{{route('product_details',$featureproduct->id)}}">
                                                 <img class="default-img"
                                                     src="{{ asset('uploads/product/'.$featureproduct->image) }}"
                                                     alt="" />
@@ -56,7 +56,7 @@
                                         <div class="product-category">
                                             <a href="shop-grid-right.html">Hodo Foods</a>
                                         </div>
-                                        <h2><a href="shop-product-right.html">{{$featureproduct->product_name}}</a></h2>
+                                        <h2><a href="{{route('product_details',$featureproduct->id)}}">{{$featureproduct->product_name}}</a></h2>
                                         <div class="product-rate d-inline-block">
                                             <div class="product-rating" style="width: 80%"></div>
                                         </div>
@@ -72,8 +72,8 @@
                                             </div>
                                             <span class="font-xs text-heading"> Sold: 30/{{$featureproduct->quantity}}</span>
                                         </div>
-                                        <a href="shop-cart.html" class="btn w-100 hover-up"><i
-                                                class="fi-rs-shopping-cart mr-5"></i>Add To Cart</a>
+                                        <button value="{{$featureproduct->id}}" class="btn w-100 hover-up" id="cart_button"><i
+                                                class="fi-rs-shopping-cart mr-5"></i>Add To Cart</button>
                                     </div>
                                 </div>
                                 @endforeach

@@ -2,7 +2,7 @@
     <div class="mobile-header-wrapper-inner">
         <div class="mobile-header-top">
             <div class="mobile-header-logo">
-                <a href="index.html"><img src="{{asset('frontend')}}/assets/imgs/theme/logo.svg" alt="logo" /></a>
+                <a href="{{route('index')}}"><img src="{{asset('frontend')}}/assets/imgs/theme/logo.svg" alt="logo" /></a>
             </div>
             <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
                 <button class="close-style search-close">
@@ -23,7 +23,7 @@
                 <nav>
                     <ul class="mobile-menu font-heading">
                         <li class="menu-item-has-children">
-                            <a href="index.html">Home</a>
+                            <a href="{{route('index')}}">Home</a>
 
                         </li>
                         <li class="menu-item-has-children">
