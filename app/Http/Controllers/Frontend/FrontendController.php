@@ -50,4 +50,19 @@ class FrontendController extends Controller
     }
 
 
+    public function cat_product($slug){
+        $id = Category::where("cat_slug", $slug)->first()->id;
+         $cat_product_view = Product::where('cat_id',$id)->get();
+         $allcategory = Category::all();
+        return view('cat_product',compact('cat_product_view','allcategory'));
+    }
+
+
+    public function featured_inside_cat($slug){
+        $id = Category::where("cat_slug", $slug)->first()->id;
+         $cat_product_view = Product::where('cat_id',$id)->get();
+         $allcategory = Category::all();
+        return view('cat_product',compact('cat_product_view','allcategory'));
+
+    }
 }

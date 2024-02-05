@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Apitesting;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
@@ -22,9 +23,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// api test
+Route::get("/api_test",[Apitesting::class,"index"]);
+Route::post("/api_testpu",[Apitesting::class,"store"])->name('apistore');
+
 // userinteface
 Route::get("/",[FrontendController::class,"index"])->name('index');
 Route::get("/product_details/{id}",[FrontendController::class,"product_details"])->name('product_details');
+Route::get("/cat_product/{slug}",[FrontendController::class,"cat_product"])->name('cat_product');
+Route::get("/featured_inside_cat/{slug}",[FrontendController::class,"featured_inside_cat"])->name('featured_inside_cat');
 
 Route::get('/dashboard', function () {
     return view('userdashboard');

@@ -94,7 +94,7 @@
                                     </div>
                                     <div class="add-cart">
                                         <button class="add" value="{{$newproduct->id}}" id="cart_button" ><i
-                                                class="fi-rs-shopping-cart mr-5"></i>Add </button>
+                                                class="fi-rs-shopping-cart mr-5"></i>Add</button>
                                     </div>
                                 </div>
                             </div>
